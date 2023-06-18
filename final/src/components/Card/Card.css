@@ -1,0 +1,13 @@
+.card {
+  padding: 10px;
+  width: 260px;
+  height: 1250px;
+  border: 1px solid #130808;
+  border-radius: 10px;
+  background-color: aqua;
+  margin: 10px;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}

@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div id="header">
       <div className="routes">
-        <NavLink to="/">Dashboard</NavLink>
+        <NavLink to="/home">Dashboard</NavLink>
         <NavLink to="/favorites">Favorites</NavLink>
         <NavLink to="/login"> {login} </NavLink>
       </div>
