@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../../components/Card/Card";
+import styled from "@emotion/styled";
+import "./Dashboard.css";
 
 const API_KEY = "3fd2be6f0c70a2a598f084ddfb75487c";
 const BASE_URL = "https://api.themoviedb.org/3";
@@ -8,6 +10,13 @@ const QUERY_PARAMS = "?query=terminator&page=1&api_key=" + API_KEY;
 const fullURL = BASE_URL + ROUTE_URL + QUERY_PARAMS;
 
 // https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1
+
+const Movies = styled.div`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+`;
 
 const Dashboard = () => {
   const [movieList, setMovieList] = useState([]);
@@ -28,9 +37,11 @@ const Dashboard = () => {
   return (
     <>
       <h1>movies</h1>
-      {movieList.map((movie) => {
-        return <Card movie={movie} />;
-      })}
+      <Movies>
+        {movieList.map((movie) => {
+          return <Card movie={movie} />;
+        })}
+      </Movies>
     </>
   );
 };

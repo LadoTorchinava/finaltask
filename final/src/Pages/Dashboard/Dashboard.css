@@ -1,0 +1,23 @@
+.dashboard {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.movie {
+  padding: 10px;
+  width: 260px;
+  height: 1250px;
+  border: 1px solid #130808;
+  border-radius: 10px;
+  background-color: aqua;
+  margin: 10px;
+}
+image {
+  width: 100%;
+  object-fit: cover;
+}
+.pic {
+  width: 200px;
+  height: 200px;
+}

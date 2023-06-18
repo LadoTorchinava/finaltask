@@ -1,4 +1,29 @@
+.main-container {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  padding: 90px 0 90px 0;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  width: 35%;
+  padding-top: 30px;
+}
+
 label {
-  display: block;
-  margin: 16px auto;
+  display: flex;
+  /* margin: 16px auto; */
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+input {
+  width: 200px;
+  height: 30px;
+  border-radius: 60px;
+  border: none;
+  outline: none;
+  background-color: rgb(178, 211, 211);
 }

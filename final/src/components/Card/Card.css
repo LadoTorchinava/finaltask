@@ -1,4 +1,4 @@
-.card {
+/* .card {
   padding: 10px;
   width: 260px;
   height: 1250px;
@@ -10,4 +10,12 @@
     width: 100%;
     object-fit: cover;
   }
+} */
+.card {
+  background-color: #d89999;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 300px;
+  margin: 10px;
 }
