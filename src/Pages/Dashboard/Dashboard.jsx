@@ -9,8 +9,6 @@ const ROUTE_URL = "/search/movie";
 const QUERY_PARAMS = "?query=terminator&page=1&api_key=" + API_KEY;
 const fullURL = BASE_URL + ROUTE_URL + QUERY_PARAMS;
 
-// https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1
-
 const Movies = styled.div`
   display: flex;
   align-items: center;
