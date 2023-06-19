@@ -5,9 +5,8 @@ import "./Dashboard.css";
 
 const API_KEY = "3fd2be6f0c70a2a598f084ddfb75487c";
 const BASE_URL = "https://api.themoviedb.org/3";
-const ROUTE_URL = "/search/movie";
-const QUERY_PARAMS = "?query=terminator&page=1&api_key=" + API_KEY;
-const fullURL = BASE_URL + ROUTE_URL + QUERY_PARAMS;
+const DISCOVER_ROUTE = "/discover/movie";
+const SEARCH_ROUTE = "/search/movie";
 
 const Movies = styled.div`
   display: flex;
@@ -19,6 +18,12 @@ const Movies = styled.div`
 const Dashboard = () => {
   const [movieList, setMovieList] = useState([]);
   async function getPosts() {
+    const BASE_QUERY = `?api_key=${API_KEY}&page=1`;
+    const QUERY_PARAMS = BASE_QUERY + "&query=terminator";
+
+    // const fullURL = BASE_URL + SEARCH_ROUTE + QUERY_PARAMS;
+    const fullURL = BASE_URL + DISCOVER_ROUTE + BASE_QUERY;
+
     try {
       const response = await fetch(fullURL);
       const data = await response.json();
