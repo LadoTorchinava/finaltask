@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button, TextField } from "@mui/material";
 import "./Login.css";
 
 const Login = ({ setIsRegister }) => {
@@ -31,31 +32,33 @@ const Login = ({ setIsRegister }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        UserName:
-        <input
-          type="text"
-          name="userName"
-          value={loginData.userName}
-          onChange={handleChange}
-        />
-        {loginErrors.userName && <span>{loginErrors.userName}</span>}
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          name="password"
-          value={loginData.password}
-          onChange={handleChange}
-        />
-        {loginErrors.password && <span>{loginErrors.password}</span>}
-      </label>
-
-      <br />
-      <button type="submit">Log In</button>
-      <button onClick={() => setIsRegister(true)}>Sign Up</button>
+    <form onSubmit={handleSubmit} className="form">
+      <TextField
+        className="input"
+        type="text"
+        label="UserName:"
+        name="userName"
+        value={loginData.userName}
+        onChange={handleChange}
+        variant="outlined"
+        error={loginErrors.userName}
+      />
+      <TextField
+        className="input"
+        type="password"
+        label="Password:"
+        name="password"
+        value={loginData.password}
+        onChange={handleChange}
+        variant="outlined"
+        error={loginErrors.password}
+      />
+      <div className="bottom">
+        <Button type="submit" variant="contained">
+          Log In
+        </Button>
+        <Button onClick={() => setIsRegister(true)}>Sign Up</Button>
+      </div>
     </form>
   );
 };

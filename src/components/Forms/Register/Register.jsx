@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "@mui/material";
 import "./Register.css";
 import validateRegister from "./validate.js";
 
@@ -111,8 +112,8 @@ const Register = ({ setIsRegister }) => {
         )}
       </label>
       <br />
-      <button type="submit">Register</button>
-      <button onClick={() => setIsRegister(false)}>Sign In</button>
+      <Button type="submit">Register</Button>
+      <Button onClick={() => setIsRegister(false)}>Sign In</Button>
     </form>
   );
 };

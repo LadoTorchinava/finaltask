@@ -6,6 +6,7 @@ import RootLayout from "./components/RootLayout/RootLayout";
 import NotFound from "./Pages/NotFound/NotFound";
 import ProductDetails from "./Pages/ProductDetails/ProductDetails";
 import Login from "./Pages/Login/Login";
+import { Container } from "@mui/material";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      <Container maxWidth="xl">
+        <RouterProvider router={router} />
+      </Container>
     </div>
   );
 }
