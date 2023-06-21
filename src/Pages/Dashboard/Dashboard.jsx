@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Card from "../../components/Card/Card";
+import MovieCard from "../../components/MovieCard/MovieCard";
 import styled from "@emotion/styled";
 import "./Dashboard.css";
 import { getRandomMovies } from "../../API/movies";
@@ -17,7 +17,6 @@ const Dashboard = () => {
   async function getMovies() {
     const movies = await getRandomMovies();
     setMovieList(movies);
-    console.log(movies);
   }
 
   useEffect(() => {
@@ -29,7 +28,7 @@ const Dashboard = () => {
       <h1>movies</h1>
       <Movies>
         {movieList.map((movie) => {
-          return <Card movie={movie} key={movie.id} />;
+          return <MovieCard movie={movie} key={movie.id} />;
         })}
       </Movies>
     </>
