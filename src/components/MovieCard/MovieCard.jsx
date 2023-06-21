@@ -10,8 +10,6 @@ import {
 import "./MovieCard.css";
 
 const MovieCard = ({ movie }) => {
-  console.log(movie);
-
   return (
     <Box className="box">
       <Card>
