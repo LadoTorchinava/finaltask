@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Card from "../../components/Card/Card";
 import styled from "@emotion/styled";
 import "./Dashboard.css";
+import { getRandomMovies } from "../../API/movies";
 
 const Movies = styled.div`
   display: flex;
@@ -13,8 +14,14 @@ const Movies = styled.div`
 const Dashboard = () => {
   const [movieList, setMovieList] = useState([]);
 
+  async function getMovies() {
+    const movies = await getRandomMovies();
+    setMovieList(movies);
+    console.log(movies);
+  }
+
   useEffect(() => {
-    // setMovieList(getMovies());
+    getMovies();
   }, []);
 
   return (
@@ -22,7 +29,7 @@ const Dashboard = () => {
       <h1>movies</h1>
       <Movies>
         {movieList.map((movie) => {
-          return <Card movie={movie} />;
+          return <Card movie={movie} key={movie.id} />;
         })}
       </Movies>
     </>

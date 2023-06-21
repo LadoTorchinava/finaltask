@@ -82,7 +82,7 @@ const Register = ({ setIsRegister }) => {
       <TextField
         className="input"
         type="text"
-        label="Email@:"
+        label="Email:"
         name="email"
         value={registerData.email}
         onChange={handleChange}
