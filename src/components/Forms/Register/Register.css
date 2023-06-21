@@ -1,8 +1,17 @@
-label {
-  display: block;
-  margin: 16px auto;
-}
-.Register {
+.form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.input {
+  width: 200px;
+}
+
+.bottom {
+  display: flex;
+  gap: 20px;
 }
