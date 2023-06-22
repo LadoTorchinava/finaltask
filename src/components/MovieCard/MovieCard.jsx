@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import "./MovieCard.css";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
   return (
@@ -30,7 +31,9 @@ const MovieCard = ({ movie }) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Learn more</Button>
+          <Button size="small">
+            <Link to={`/product/${movie.id}`}>Learn more </Link>
+          </Button>
         </CardActions>
       </Card>
     </Box>
