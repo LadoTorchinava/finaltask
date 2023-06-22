@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import MovieCard from "../../components/MovieCard/MovieCard";
 import "./Dashboard.css";
-import { getRandomMovies, getSearchMovies } from "../../API/movies";
+import { getRandomMovies, getSearchMovies } from "../../services/movies";
 import { Typography, InputBase, Button } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";

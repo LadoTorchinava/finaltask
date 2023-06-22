@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getMovieDetails } from "../../API/movies";
+import { getMovieDetails } from "../../services/movies";
 import { useParams } from "react-router-dom";
 import { CardMedia } from "@mui/material";
 import "./ProductDetails.css";
@@ -12,8 +12,6 @@ const ProductDetails = () => {
   async function setMovieDetails(params) {
     const movie = await getMovieDetails(params.id);
     setMovie(movie);
-    console.log(params.id);
-    console.log(movie);
   }
 
   useEffect(() => {
