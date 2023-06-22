@@ -57,7 +57,7 @@ const Register = ({ setIsRegister }) => {
         value={registerData.userName}
         onChange={handleChange}
         error={registerErrors.userName}
-        helperText={registerErrors.email}
+        helperText={registerErrors.userName}
         variant="outlined"
       />
       <TextField
