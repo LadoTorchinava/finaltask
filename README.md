@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Start fake backend server:
 
-`json-server db.json -m ./node_modules/json-server-auth --port 3004`
+`npm run server`
 
 In the project directory, you can run:
 
