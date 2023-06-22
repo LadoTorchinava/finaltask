@@ -24,8 +24,7 @@ const Login = ({ setIsRegister }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const response = await loginUser(loginData);
-
-    if (response.accessToken) {
+    if (response?.accessToken) {
       localStorage.setItem("authToken", response.accessToken);
       navigate(`/home`);
     } else {

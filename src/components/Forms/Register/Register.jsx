@@ -34,9 +34,14 @@ const Register = ({ setIsRegister }) => {
     setRegisterErrors(errors);
 
     if (!Object.keys(errors).length) {
-      const response = await registerUser(registerData);
-      localStorage.setItem("authToken", response.accessToken);
-      navigate(`/home`);
+      const { passwordRepeat, ...rest } = registerData;
+      const response = await registerUser(rest);
+      if (response?.accessToken) {
+        localStorage.setItem("authToken", response.accessToken);
+        navigate(`/home`);
+      } else {
+        setRegisterErrors({ ...registerErrors, email: response });
+      }
     } else {
       console.log("Register is invalid");
     }
@@ -52,7 +57,7 @@ const Register = ({ setIsRegister }) => {
         value={registerData.userName}
         onChange={handleChange}
         error={registerErrors.userName}
-        helperText={registerErrors.userName}
+        helperText={registerErrors.email}
         variant="outlined"
       />
       <TextField

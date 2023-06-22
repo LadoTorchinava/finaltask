@@ -13,9 +13,7 @@ export async function loginUser(params) {
       password: params.password,
     });
 
-    if (data?.accessToken) {
-      return data;
-    }
+    console.log(data);
 
     return data;
   } catch (error) {
@@ -26,10 +24,11 @@ export async function loginUser(params) {
 
 export async function registerUser(params) {
   try {
-    const response = await client.post(`/register`, params);
+    const { data } = await client.post(`/register`, params);
 
-    return response;
+    return data;
   } catch (error) {
     console.error(error);
+    return error.response.data;
   }
 }
