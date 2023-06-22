@@ -7,10 +7,11 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import "./MovieCard.css";
-import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
+  const navigate = useNavigate();
   return (
     <Box className="box">
       <Card>
@@ -31,8 +32,8 @@ const MovieCard = ({ movie }) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">
-            <Link to={`/product/${movie.id}`}>Learn more </Link>
+          <Button size="small" onClick={() => navigate(`/product/${movie.id}`)}>
+            Learn more
           </Button>
         </CardActions>
       </Card>
