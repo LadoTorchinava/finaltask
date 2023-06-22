@@ -17,7 +17,7 @@ const Register = ({ setIsRegister }) => {
     passwordRepeat: "",
   });
 
-  const [loginErrors, setLoginErrors] = useState({});
+  const [registerErrors, setRegisterErrors] = useState({});
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -31,7 +31,7 @@ const Register = ({ setIsRegister }) => {
     event.preventDefault();
 
     const errors = validateRegister(registerData);
-    setLoginErrors(errors);
+    setRegisterErrors(errors);
 
     if (!Object.keys(errors).length) {
       const response = await registerUser(registerData);
@@ -51,7 +51,8 @@ const Register = ({ setIsRegister }) => {
         name="userName"
         value={registerData.userName}
         onChange={handleChange}
-        error={loginErrors.userName}
+        error={registerErrors.userName}
+        helperText={registerErrors.userName}
         variant="outlined"
       />
       <TextField
@@ -61,7 +62,8 @@ const Register = ({ setIsRegister }) => {
         name="firstName"
         value={registerData.firstName}
         onChange={handleChange}
-        error={loginErrors.firstName}
+        error={registerErrors.firstName}
+        helperText={registerErrors.firstName}
         variant="outlined"
       />
       <TextField
@@ -71,7 +73,8 @@ const Register = ({ setIsRegister }) => {
         name="lastName"
         value={registerData.lastName}
         onChange={handleChange}
-        error={loginErrors.lastName}
+        error={registerErrors.lastName}
+        helperText={registerErrors.lastName}
         variant="outlined"
       />
       <TextField
@@ -81,7 +84,8 @@ const Register = ({ setIsRegister }) => {
         name="phoneNumber"
         value={registerData.phoneNumber}
         onChange={handleChange}
-        error={loginErrors.phoneNumber}
+        error={registerErrors.phoneNumber}
+        helperText={registerErrors.phoneNumber}
         variant="outlined"
       />
       <TextField
@@ -91,7 +95,8 @@ const Register = ({ setIsRegister }) => {
         name="email"
         value={registerData.email}
         onChange={handleChange}
-        error={loginErrors.email}
+        error={registerErrors.email}
+        helperText={registerErrors.email}
         variant="outlined"
       />
       <TextField
@@ -101,7 +106,8 @@ const Register = ({ setIsRegister }) => {
         name="password"
         value={registerData.password}
         onChange={handleChange}
-        error={loginErrors.password}
+        error={registerErrors.password}
+        helperText={registerErrors.password}
         variant="outlined"
       />
       <TextField
@@ -111,7 +117,8 @@ const Register = ({ setIsRegister }) => {
         name="passwordRepeat"
         value={registerData.passwordRepeat}
         onChange={handleChange}
-        error={loginErrors.passwordRepeat}
+        error={registerErrors.passwordRepeat}
+        helperText={registerErrors.passwordRepeat}
         variant="outlined"
       />
       <div className="bottom">

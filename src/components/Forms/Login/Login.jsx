@@ -44,6 +44,7 @@ const Login = ({ setIsRegister }) => {
         onChange={handleChange}
         variant="outlined"
         error={loginErrors.email}
+        helperText={loginErrors.email}
       />
       <TextField
         className="input"
