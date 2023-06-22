@@ -1,10 +1,13 @@
+import "./Login.css";
 import { useState } from "react";
 import { Button, TextField } from "@mui/material";
-import "./Login.css";
+import { loginUser } from "../../../services/account";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ setIsRegister }) => {
+  const navigate = useNavigate();
   const [loginData, setLoginData] = useState({
-    userName: "",
+    email: "",
     password: "",
   });
 
@@ -18,17 +21,16 @@ const Login = ({ setIsRegister }) => {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    const response = await loginUser(loginData);
 
-    // const errors = validateLogin(loginData);
-    // setLoginErrors(errors);
-
-    // if (!Object.keys(errors).length) {
-    //   console.log(loginData);
-    // } else {
-    //   console.log("Login is invalid");
-    // }
+    if (response.accessToken) {
+      localStorage.setItem("authToken", response.accessToken);
+      navigate(`/home`);
+    } else {
+      setLoginErrors({ email: response });
+    }
   };
 
   return (
@@ -36,12 +38,12 @@ const Login = ({ setIsRegister }) => {
       <TextField
         className="input"
         type="text"
-        label="UserName:"
-        name="userName"
-        value={loginData.userName}
+        label="Email:"
+        name="email"
+        value={loginData.email}
         onChange={handleChange}
         variant="outlined"
-        error={loginErrors.userName}
+        error={loginErrors.email}
       />
       <TextField
         className="input"

@@ -2,8 +2,11 @@ import { useState } from "react";
 import { Button, TextField } from "@mui/material";
 import "./Register.css";
 import validateRegister from "./validate.js";
+import { registerUser } from "../../../services/account";
+import { useNavigate } from "react-router-dom";
 
 const Register = ({ setIsRegister }) => {
+  const navigate = useNavigate();
   const [registerData, setRegisterDataData] = useState({
     userName: "",
     firstName: "",
@@ -24,16 +27,18 @@ const Register = ({ setIsRegister }) => {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     const errors = validateRegister(registerData);
     setLoginErrors(errors);
 
     if (!Object.keys(errors).length) {
-      console.log(registerData);
+      const response = await registerUser(registerData);
+      localStorage.setItem("authToken", response.accessToken);
+      navigate(`/home`);
     } else {
-      console.log("Login is invalid");
+      console.log("Register is invalid");
     }
   };
 
