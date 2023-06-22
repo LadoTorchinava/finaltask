@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 import "./App.css";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Favorites from "./Pages/Favorites/Favorites";
@@ -14,6 +18,7 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <NotFound />,
     children: [
+      { path: "/", element: <Navigate to={"/home"} /> },
       { path: "/home", element: <Dashboard /> },
       { path: "/favorites", element: <Favorites /> },
       { path: "/login", element: <Login /> },
