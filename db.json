@@ -4,6 +4,15 @@
       "email": "olivier@mail.com",
       "password": "$2a$10$VoF3diJ/gfhFfxpTgr6nQelyhbcR55dAdjLr.WoOs6B9Le6I20Ul6",
       "id": 1
+    },
+    {
+      "email": "lado@lado.lado",
+      "password": "$2a$10$fJ8HeabGBog5UZbHlbltpuZiUddMeADjC9Q1TyD6yJ/7OV6d2J0nu",
+      "userName": "lado",
+      "firstName": "as",
+      "lastName": "asd",
+      "phoneNumber": "56454",
+      "id": 2
     }
   ]
 }
